@@ -1,0 +1,154 @@
+- type: entityTable
+  id: MaintsMonstersBasic
+  table: !type:GroupSelector
+    children:
+    # harmless critters (except for the radioactive mouse)
+    - !type:NestedSelector
+      tableId: SmallCritterEntityTable
+    # one or more larger harmless critters
+    - !type:GroupSelector
+      children:
+      - !type:AllSelector
+        children:
+        - id: MobBat
+        - id: MobBat
+        - id: MobBat
+      - !type:AllSelector
+        children:
+        - id: MobChicken
+        - id: MobChicken
+        - id: MobChicken
+      - !type:GroupSelector
+        children:
+        - !type:AllSelector
+          children:
+          - id: MobDuckMallard
+          - id: MobDuckMallard
+          - id: MobDuckMallard
+        - !type:AllSelector
+          children:
+          - id: MobDuckBrown
+          - id: MobDuckBrown
+          - id: MobDuckBrown
+        - !type:AllSelector
+          children:
+          - id: MobDuckWhite
+          - id: MobDuckWhite
+          - id: MobDuckWhite
+      - !type:AllSelector
+        children:
+        - id: MobMoproachHat
+        - id: MobMoproach
+        - id: MobMoproach
+      - !type:AllSelector
+        children:
+        - id: MobHamster
+        - id: MobHamster
+        - id: MobHamster
+      - !type:AllSelector
+        children:
+        - !type:GroupSelector
+          children:
+          - id: MobCat
+          - id: MobCatCalico
+          - id: MobCatCaracal
+          - id: MobCatSpace
+            weight: 0.1
+          - id: MobCatShadow
+            weight: 0.01
+        - id: MobCatKitten
+        - id: MobCatKitten
+        - id: MobCatKitten
+      - id: MobCow
+      - id: MobGoat
+      - id: MobPig
+      - id: MobReindeerBuck
+      - id: MobReindeerDoe
+      - id: MobEmotionalSupportScurret
+      - id: MobLizard
+      - id: MobKangaroo
+      - id: MobBoxingKangaroo
+      - id: MobParrot
+      - id: MobCorgiSmart
+      - id: MobFox
+      - id: MobFerret
+      - id: MobMonkey
+      - id: MobKobold
+    # simple bots
+    - !type:GroupSelector
+      children:
+      - id: MobFireBot
+      - id: MobHonkBot
+      - id: MobCleanBot
+      - id: MobMedibot
+      - id: MobMimeBot
+      - id: MobHugBot
+    # minor aggressive mobs
+    - !type:GroupSelector
+      children:
+      - id: MobGorilla
+      # Hostile vent critters
+      - id: MobAdultSlimesBlueAngry
+      - id: MobAdultSlimesGreenAngry
+      - id: MobAdultSlimesYellowAngry
+      - id: MobPurpleSnake
+      - id: MobSmallPurpleSnake
+      - id: MobCobraSpace
+      - id: MobGiantSpiderAngry
+      - id: MobClownSpider
+      conditions:
+      - !type:PlayerCountCondition
+        min: 15 # This matches the minplayers for the hostile vent critter random events
+    # space aggressive mobs
+    - !type:GroupSelector
+      children:
+      - id: MobKangarooSpace
+      - id: MobSpiderSpace
+      - id: MobCobraSpace
+      - id: MobBearSpace
+      - id: MobGoliath
+      - id: MobCarp
+      conditions:
+      - !type:PlayerCountCondition
+        min: 35
+    # reagent slimes
+    - !type:GroupSelector
+      children:
+      - id: ReagentSlime # water
+      - id: ReagentSlimeBeer
+      - id: ReagentSlimeBicaridine
+      - id: ReagentSlimeEphedrine
+      #- id: ReagentSlimeMuteToxin # Part of the point is to get roughed up and start more interactions, muting works against that
+      #- id: ReagentSlimeNocturne # Disabled this one because it's not a ton of fun to fight
+      - id: ReagentSlimeNorepinephricAcid
+      - id: ReagentSlimeOmnizine
+      - id: ReagentSlimeRobustHarvest
+      - id: ReagentSlimeTHC
+      conditions:
+      - !type:PlayerCountCondition
+        min: 35
+    # xenos
+    - !type:GroupSelector
+      children:
+      - id: MobXeno
+      - id: MobXenoPraetorian
+      - id: MobXenoDrone
+      - id: MobXenoQueen
+      - id: MobXenoRavager
+      - id: MobXenoRunner
+      - id: MobXenoRouny
+      - id: MobXenoSpitter
+      conditions:
+      - !type:PlayerCountCondition
+        min: 35
+    # nasties
+    - !type:GroupSelector
+      weight: 0.3
+      children:
+      - id: MobBearSoviet # Generally tough and deals a good amount of damage
+      - id: ReagentSlimeToxin # High damage output
+      - id: ReagentSlimeNapalm # High damage output
+      conditions:
+      - !type:PlayerCountCondition
+        min: 60
+

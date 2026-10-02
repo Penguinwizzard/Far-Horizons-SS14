@@ -537,3 +537,7 @@
     - id: BasicDecalDirtMonospaceVariationPass
       prob: 0.50
       orGroup: monospaceDecals
+    # Far Horizons Start
+    - id: MaintenanceMonstersVariationPass
+      prob: 0.20
+    # Far Horizons End

@@ -160,6 +160,11 @@
   - type: EntityStorageVisuals
     stateDoorOpen: generic_open
     stateDoorClosed: generic_door
+  # Far-Horizons start
+  - type: MonsterSpawnCapable
+  - type: EntityStorage
+    airtight: false # This is because otherwise if monsters spawn in the closet, they start suffocating.
+  # Far-Horizons end
 
 # Syndicate
 - type: entity
